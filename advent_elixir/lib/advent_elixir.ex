@@ -4,15 +4,23 @@ defmodule AdventElixir do
   """
 
   @doc """
-  Hello world.
+  iex> day_1(["+1", "+1", "+1"])
+  3
 
-  ## Examples
+  iex> day_1(["+1", "+1", "-2"])
+  0
 
-      iex> AdventElixir.hello()
-      :world
-
+  iex> day_1(["-1", "-2", "-3"])
+  -6
   """
-  def hello do
-    :world
+  def day_1(frequencies) do
+    Enum.reduce(frequencies, 0, fn frequency, total ->
+      case Integer.parse(frequency) do
+        {number, ""} -> total + number
+        :error ->
+          total
+      end
+    end)
   end
+
 end
