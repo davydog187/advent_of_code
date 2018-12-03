@@ -7,8 +7,7 @@ defmodule AdventElixirTest do
       fixture =
         Path.join([__DIR__, "./fixtures/day_1.txt"])
         |> File.read!()
-        |> String.split("\n")
-        |> Enum.reject(& String.trim(&1) == "")
+        |> String.split("\n", trim: true)
 
       {:ok, fixture: fixture}
     end
