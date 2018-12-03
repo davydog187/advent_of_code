@@ -4,12 +4,7 @@ defmodule AdventElixirTest do
 
   describe "day 1" do
     setup do
-      fixture =
-        Path.join([__DIR__, "./fixtures/day_1.txt"])
-        |> File.read!()
-        |> String.split("\n", trim: true)
-
-      {:ok, fixture: fixture}
+      {:ok, fixture: read_input("./fixtures/day_1.txt")}
     end
 
     test "a", %{fixture: input} do
@@ -21,4 +16,23 @@ defmodule AdventElixirTest do
     end
   end
 
+  describe "day 2" do
+    setup do
+      {:ok, fixture: read_input("./fixtures/day_2.txt")}
+    end
+
+    test "a", %{fixture: input} do
+      assert AdventElixir.day_2a(input) == 5928
+    end
+
+    test "b", %{fixture: input} do
+      assert AdventElixir.day_2b(input) == "bqlporuexkwzyabnmgjqctvfs"
+    end
+  end
+
+  defp read_input(path) do
+    Path.join([__DIR__, path])
+    |> File.read!()
+    |> String.split("\n", trim: true)
+  end
 end
