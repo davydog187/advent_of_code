@@ -12,7 +12,7 @@ defmodule AdventElixir.Day3Test do
     end
 
     test "b", %{fixture: input} do
-      assert input
+      assert AdventElixir.Day3.find(input) == 116
     end
   end
 
