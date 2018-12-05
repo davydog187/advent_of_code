@@ -8,7 +8,7 @@ defmodule AdventElixir.Day3Test do
     end
 
     test "a", %{fixture: input} do
-      assert AdventElixir.Day3.run(input) == 110827
+      assert AdventElixir.Day3.count(input) == 110_827
     end
 
     test "b", %{fixture: input} do

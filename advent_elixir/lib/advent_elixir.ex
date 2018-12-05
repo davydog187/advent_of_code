@@ -165,5 +165,4 @@ defmodule AdventElixir do
       end
     end)
   end
-
 end
